@@ -24,3 +24,6 @@ Acesso a dados via APIs REST
 Autenticação e autorização
 
 Testes automatizados (jest)
+
+git config --global user.email "claudiomiro.silva2@etec.sp.gov.br"
+git config --global user.name "caetanocc"
