@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETEC AE - Autenticar</title>
+</head>
+<body>
+
+    <h3>Etec Albert Einstein</h3>
+
+    <div id="dados">
+        <p id="perfil"></p>
+        <p id="foto"></p>
+
+        <button type="button" id="btnSair">Sair</button>
+    </div>
+
+    <div id="signin">
+        <h4>Entrar</h4>
+        <input type="email" id="emailEntrar" placeholder="Informe email">
+        <input type="password" id="senhaEntrar" placeholder="Informe senha">
+        <br>
+        <input type="button" id="btnEntrar" value="Entrar">
+        <br>
+        <input type="button" id="btnGoogle" value="Entrar Google">
+    </div>
+
+    <div id="signup">
+        <h4>Cadastrar</h4>
+        <input type="email" id="emailCad" placeholder="Informe email">
+        <input type="password" id="senhaCad"  placeholder="Informe senha">
+        <input type="password" id="senhaCad2" placeholder="Confirme senha">
+        <input type="button" id="btnCad" value="Criar usuário">
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
