@@ -1,0 +1,76 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: url("https://wallpapers.com/images/featured/minimalist-7xpryajznty61ra3.jpg"); */
+    position: center;
+    background-size: cover;
+}
+
+#dados{
+    display: flex;
+    flex-direction: row;
+}
+
+.responsivo{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Isso garante que o corpo da página tenha pelo menos a altura da tela */
+        margin: 0; /* Remove as margens padrão do corpo da página */
+}
+
+
+.titulo{
+    background-color: #E6E3E1;
+}
+
+.titulo .pai{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.entrar {
+    width: 50%;
+    max-width: 400px; /* Defina uma largura máxima para a sua div se necessário */
+    padding: 30px;
+    position: absolute;      
+    z-index: 2; 
+   text-align: center;
+   background-color: #F05841;
+   border-radius: 5px;
+}
+
+
+.entrar .caixa{
+    display: flex;
+
+}
+
+.popup{
+    width: 50%;
+    max-width: 400px; /* Defina uma largura máxima para a sua div se necessário */
+    padding: 30px;
+    position: absolute;      
+    z-index: 2; 
+   text-align: center;
+   background-color: #F05841;
+   border-radius: 5px;
+}
+
+.conta{
+    background-color: aliceblue;
+}
+
+.imput{
+        align-items: center;
+        width: 200px;
+        height: 40px;
+        background-color: #E6E3E1;
+        border-radius: 5px;
+        border: 1px solid transparent;
+}
+
+button, .button{
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
