@@ -118,10 +118,10 @@ createMus_btn.addEventListener("click", (e) => {
 })
    
 function createMusica() {
-    const faixa = document.querySelector("#faixa")
-    const artista = document.querySelector("#artista")
-    const estrelas = document.querySelector("#estrelas")
-    const album = document.querySelector("#album")
+    const faixa = document.querySelector("#faixa").value
+    const artista = document.querySelector("#artista").value
+    const estrelas = document.querySelector("#estrelas").value
+    const album = document.querySelector("#album").value
     
 
     const url= `https://etec24-3dc8c-default-rtdb.firebaseio.com/musicas.json`
@@ -135,7 +135,7 @@ function createMusica() {
         },
         body: `{
             "faixa": "${faixa}",
-            "artista": "${artista}",
+            "cantor": "${artista}",
             "estrelas": "${estrelas}",
             "album": "${album}",
             "status": "1" 
