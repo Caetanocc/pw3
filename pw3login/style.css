@@ -245,3 +245,28 @@ tr:nth-child(even) {
 button {
  cursor: pointer;
 }
+
+/* Estilize o componente de classificação */
+.stars {
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Esconde a barra de rolagem */
+}
+
+.star {
+    width: 20px; /* Largura de cada estrela */
+    height: 20px; /* Altura de cada estrela */
+    background: url('star-empty.png'); /* Imagem da estrela vazia */
+    margin-right: 5px; /* Espaçamento entre as estrelas */
+    cursor: pointer; /* Adicione um cursor de mão para indicar que é clicável */
+}
+
+/* Estilize as estrelas preenchidas */
+.star.filled {
+    background: url('star-filled.png'); /* Imagem da estrela preenchida */
+}
+
+/* Esconda o controle deslizante */
+input[type="range"] {
+    display: none;
+}

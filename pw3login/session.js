@@ -1,27 +1,31 @@
 let dados = document.querySelector("#dados")
 let perfil = document.querySelector("#perfil")
 let foto = document.querySelector("#foto")
-let userId = document.querySelector("#userId")
 
 // controle de sessão.
 auth.onAuthStateChanged(firebaseUser => {
+
     if(firebaseUser){
-        console.log(auth.currentUser.uid + " id user" )
+        console.log(auth.currentUser.email + " logado" )
         dados.style.display = "block"
-        perfil.innerHTML = auth.currentUser.email 
+        perfil.innerHTML = auth.currentUser.email
             + " " + auth.currentUser.displayName
-            + " " + auth.currentUser.uid
         
         if (auth.currentUser.photoURL) {
             foto.innerHTML = "<img src='"+ auth.currentUser.photoURL + "'>"
         }
 
-        userId.innerHTML = auth.currentUser.uid
+        sessionStorage.setItem('Usuario', JSON.stringify(auth.currentUser.uid));
 
+        console.log(auth.currentUser.uid)
+
+        //window.location.pathname="home.html"
     }
     else {
         dados.style.display = "none"
         window.location.pathname="/"
+        sessionStorage.removeItem('Usuario');
+
     }
     
 })

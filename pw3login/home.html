@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-    <h1>Lista músicas Etec</h1>
+    <h1>Minha Lista de músicas Etec</h1>
     <div id="dados">
         <p id="perfil"></p>
         <p id="foto"></p>
@@ -40,8 +40,15 @@
          </div>
          <div class="form-item">
           <label for="estrelas">Estrelas</label>
-          <input   type="range"  name="estrelas" id="estrelas" class="user-point"  min="0"   max="5"  step="1"/>
+          <input   type="range"  name="estrelas" id="estrelas" class="user-point"  min="0"   max="5"  step="1" oninput="updateStars(this.value)" />
          </div>
+         <div class="stars">
+            <div class="star" onclick="setRating(1)"></div>
+            <div class="star" onclick="setRating(2)"></div>
+            <div class="star" onclick="setRating(3)"></div>
+            <div class="star" onclick="setRating(4)"></div>
+            <div class="star" onclick="setRating(5)"></div>
+        </div>
          <div class="form-item">
             <label for="album">Album</label>
             <input type="text" name="album" id="album"  />
