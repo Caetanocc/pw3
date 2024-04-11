@@ -1,0 +1,55 @@
+/* ListaDeTarefas.css */
+
+.lista-de-tarefas {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .adicionar-tarefa {
+    margin-bottom: 20px;
+  }
+  
+  .adicionar-tarefa input {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .adicionar-tarefa button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .tarefa:hover {
+    background-color: #e9e9e9;
+  }
+  
+  .remover-tarefa {
+    color: #fff;
+    background-color: #dc3545;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .remover-tarefa:hover {
+    background-color: #c82333;
+  }
+  
