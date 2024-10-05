@@ -1,11 +1,35 @@
-# DS Etec Albert Einstein 
+# DS Etec Albert Einstein - Disciplina PW3
 
-# Disciplina PW3
+# Bases tecnológicas - 
 
-###  Avaliação PW3 1 Tri: 
-1. Acesse o link:   https://forms.gle/4iouNCBainQnoiy87
-2. Responda as questões
-3. Avise o professor que foi entregue.
+### Aplicações Web de página única (SPA)
+* Renderização de HTML;
+* Templates e estilização;
+* Componentes;
+* Estados;
+* Roteamento e navegação;
+* Eventos;
+* Formulários;
+* Validação.
+
+### Conceitos de CMS - Content Management System
+* Sessão de Usuário/Cookies/Hash de Autenticação.
+
+### Acesso a dados via APIs REST
+
+### Autenticação e autorização
+
+### Testes automatizados (jest)
+
+#### Exemplo de um componente em React:
+
+```javascript
+import React from 'react';
+
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+```
 
    
 
