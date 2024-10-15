@@ -20,7 +20,8 @@ npm run dev
 npm install react-router-dom
 npm install firebase 
 npm install @reduxjs/toolkit 
-npm install react-redux 
+npm install react-redux
+npm install react-modal
 
 ```
  
@@ -134,11 +135,7 @@ function Header({pageTitle }) {
 
             <div className="header-btns">
                     <NavLink to="/">
-                      <button className="btn">Times</button>
-                    </NavLink>
-
-                    <NavLink to="/members">
-                      <button className="btn">Membros</button>
+                      <button className="btn">Lista</button>
                     </NavLink>
 
                     <div className="user-info">
@@ -209,7 +206,6 @@ function Item({ item }) {
 export default Item;
 
 ```
-
 
 
 *  na pasta ***views*** crie um arquivo ***LoginPage.jsx*** e inclua:
@@ -448,7 +444,66 @@ export default ListaPage;
 
 ```
 
+*  na pasta ***views*** crie um arquivo ***AddItemPage.jsx*** e inclua:
 
+```
+
+import Header from '../components/Header.jsx';
+import { useNavigate } from 'react-router-dom';
+import { collection, addDoc } from "firebase/firestore"; 
+import { db, auth } from '../firebase/config.js';
+
+function AddItemPage() {
+
+    const navigate = useNavigate();
+
+    const handleAddItem = async (e) => {
+        e.preventDefault();
+
+        const newItem = {
+            nome: document.querySelector('input[name=nome]').value,
+            foto: document.querySelector('input[name=foto]').value,
+        }
+
+        if (newItem.nome && newItem.foto ) {
+
+            newItem.user_id = auth.currentUser.uid;
+            const docRef = await addDoc(collection(db, "items"), newItem);
+            newItem.id = docRef.id;
+
+            //alert('Item incluído com sucesso!');
+            navigate("/");
+        } else {
+            alert('Por favor, preencha os campos obrigatórios.');
+        }
+    }
+
+    const pageTitle = "Adicionar 1 Item";
+
+    return (
+        <>
+            <div className="container">
+                <Header pageTitle={pageTitle} />
+
+                <form className="add-form">
+                    <div className="form-control">
+                        <label>Nome do Item *</label>
+                        <input type="text" name="nome" placeholder="Nome do Item" />
+                    </div>
+                    <div className="form-control">
+                        <label>Foto do Item *</label>
+                        <input type="text" name="foto" placeholder="Foto: informe uma URL" />
+                    </div>
+
+                    <button onClick={(e) => handleAddItem(e)} className="btn btn-block">Salvar</button>
+                </form>
+            </div>
+        </>
+    );
+}
+
+export default AddItemPage;
+```
 
 * Localize o arquivo ***index.html***
 
@@ -884,8 +939,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ```
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './views/LoginPage.jsx';
-import MembrosPage from './views/ListaPage.jsx'
-import AddMembroPage from './views/AddItemPage.jsx';
+import ListaPage from './views/ListaPage.jsx'
+import AddItemPage from './views/AddItemPage.jsx';
 
 import {selectUsers} from './store/usersSlice.js';
 import {useSelector} from 'react-redux';
@@ -899,8 +954,8 @@ function App() {
           user.currentUser ? 
           <BrowserRouter>
             <Routes>
-              <Route index element={<TeamsPage />} />
-              <Route path="/lista" element={<ListaPage />} />
+              <Route index element={<ListaPage />} />
+              <Route path="/item/:id" element={<ListaPage />} />
               <Route path="/add-item" element={<AddItemPage />} />
 
             </Routes>
@@ -909,12 +964,12 @@ function App() {
           <LoginPage />
       } 
 
-
     </>
   )
 }
 
 export default App
+
 ```
 
 
