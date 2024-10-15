@@ -972,6 +972,8 @@ export default App
 
 ```
 
+### Execute o projeto e faça testes incluindo itens.
+
 
 
 
