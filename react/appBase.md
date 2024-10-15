@@ -452,7 +452,7 @@ export default ListaPage;
 
 * Localize o arquivo ***index.html***
 
-* Substitua a section ***<header>*** por esse conteudo
+* Substitua a section ***<header>*** por esse conteúdo
 
 ```
   <head>
@@ -471,7 +471,7 @@ export default ListaPage;
 
 * Localize o arquivo ***index.css***
 
-* Substitua  por esse conteudo
+* Substitua  por esse conteúdo
 
 ```
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&display=swap");
@@ -879,7 +879,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 * Localize o arquivo ***App.jsx***
 
-* Para ajustar rotas use o conteudo
+* Para ajustar rotas use o conteúdo, substitua tudo.
 
 ```
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
