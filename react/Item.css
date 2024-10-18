@@ -1,0 +1,32 @@
+.swipe-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.item-content {
+    flex: 1;
+    padding: 16px;
+}
+
+.delete-button {
+    position: absolute;
+    right: -100px; /* Botão de exclusão começa fora da tela */
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: right 0.3s ease;
+}
+
+.swiped .item-content {
+    transform: translateX(-100px); /* Arrasta o conteúdo para a esquerda */
+}
+
+.swiped .delete-button {
+    right: 16px; /* Mostra o botão ao arrastar */
+}
