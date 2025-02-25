@@ -6,6 +6,12 @@
 ```
 npm install -g create-vite
 npm create vite@latest appBase 
+```
+- Escolha como nome do package:  **package.json**
+- Escolha opção **React**
+- Escolha **JavaScript + SWC**
+
+```
 cd appBase
 npm install
 npm run dev 
