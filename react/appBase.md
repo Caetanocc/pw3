@@ -513,7 +513,7 @@ export default AddItemPage;
 
 * Localize o arquivo ***index.html***
 
-* Substitua a section ***<header>*** por esse conteúdo
+* Substitua a section `<head>` por esse conteúdo
 
 ```
   <head>
