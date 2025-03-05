@@ -16,29 +16,21 @@ cd appInicial
 code .
 ```
 
-* Agora instale o node no app criado e rode usando os comandos:
+* Agora instale o node no app criado e instale o firebase usando os comandos:
 
 ```
 npm install
+npm install firebase 
+```
+
+* Use o comando para rodar em dev
+```
 npm run dev 
 ```
 
 *  após rodar utilize a opção 'o' para abrir o projeto no navegador , deve abrir algo como http://localhost:5173/
   
 *  abra outro cmd na pasta c:\pw3\appInicial 
-
-*  instale outros pacotes necessários ao projeto com os comandos:
-```
-npm install react-router-dom
-npm install firebase 
-npm install @reduxjs/toolkit 
-npm install react-redux
-npm install react-modal
-
-```
- 
-*  digite o comando para abrir o vscode
-``` code . ```   
 
 *  no vscode dentro de ***src*** crie uma pasta ***firebase*** e dentro crie arquivo config.js 
 *  inclua o código no config.js , lembre-se de incluir suas chaves do firebase 
@@ -147,9 +139,11 @@ export default LoginPage
 
 * Localize o arquivo ***index.html***
 
-* Substitua a section `<head>` por esse conteúdo
+* Substitua por esse conteúdo
 
 ```
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -162,6 +156,12 @@ export default LoginPage
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Etec AE Firebase</title>
   </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
 ```
 
 * Localize o arquivo ***index.css***
@@ -548,27 +548,6 @@ table tr th {
 ```
 
 
-* Localize o arquivo ***main.jsx*** e substitua o conteúdo por esse:
-
-```
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-import Modal from 'react-modal';
-
-Modal.setAppElement('#root');
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
-
-```
-
-
 * Localize o arquivo ***App.jsx***
 
 * Para ajustar rotas use o conteúdo, substitua tudo.
@@ -593,6 +572,10 @@ export default App
 ```
 
 ### Execute o projeto e faça testes .
+
+```
+npm run dev
+```
 
 
 
