@@ -13,6 +13,12 @@ npm create vite@latest appInicial
 
 ```
 cd appInicial
+code .
+```
+
+* Agora instale o node no app criado e rode usando os comandos:
+
+```
 npm install
 npm run dev 
 ```
