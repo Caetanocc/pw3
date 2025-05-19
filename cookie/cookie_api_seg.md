@@ -4,6 +4,68 @@
 Uma das formas mais seguras e eficientes de integrar Cookies com APIs é através do uso de tokens de autenticação, como JWT (JSON Web Token) e OAuth. Essa abordagem permite que o usuário permaneça autenticado e suas permissões sejam verificadas em cada requisição, sem a necessidade de revalidar a sessão constantemente.
 - Integração com autenticação JWT e OAuth.
 
+## O que é JWT (JSON Web Token)?
+
+JWT (JSON Web Token) é um padrão aberto (RFC 7519) para transmissão de informações de forma segura e compacta entre duas partes — um cliente e um servidor. Essas informações são verificáveis e assinadas digitalmente para garantir a integridade dos dados.
+
+### 🔍 **Estrutura de um JWT**
+Um JWT é composto por três partes separadas por pontos:
+
+1. **Header (Cabeçalho):** Contém informações sobre o algoritmo de criptografia e o tipo do token.
+2. **Payload (Corpo):** Contém os dados (claims) que se deseja compartilhar — por exemplo, o ID do usuário, permissões, etc.
+3. **Signature (Assinatura):** Garante que o token não foi alterado no caminho entre o cliente e o servidor.
+
+**Exemplo:**
+```
+HEADER.PAYLOAD.SIGNATURE
+```
+
+- **Header:**
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+- **Payload:**
+```json
+{
+  "id": "123",
+  "username": "claudiomiro",
+  "exp": 1716239022
+}
+```
+
+- **Signature:**
+A assinatura é gerada a partir do Header e Payload utilizando uma chave secreta. Ela é usada para validar a autenticidade dos dados.
+
+### 📌 **Vantagens do JWT:**
+- É auto-contido: contém todas as informações necessárias para validar um usuário.
+- Reduz chamadas ao servidor: o servidor não precisa buscar sessão em um banco de dados.
+- Escalável para microsserviços: pode ser validado por qualquer serviço que tenha a chave pública.
+
+### ⚠️ **Cuidados de Segurança:**
+- **Nunca armazene dados sensíveis no Payload**, ele é apenas codificado (Base64), não criptografado.
+- Use `HttpOnly` e `Secure` para impedir manipulação via JavaScript e garantir HTTPS.
+- Expire tokens antigos ao redefinir senhas ou alterar permissões.
+
+---
+
+## 🔐 **Como Funciona?**
+1. O usuário realiza login e a API valida as credenciais.
+2. A API gera um **token JWT** e o armazena em um Cookie do navegador, marcado como **Secure** e **HttpOnly**.
+3. Em cada requisição subsequente, o navegador envia automaticamente esse Cookie para o servidor.
+4. A API valida o JWT para confirmar a autenticidade e autorização do usuário.
+
+### ⚠️ **Melhores Práticas:**
+- Sempre marcar o Cookie como `Secure` para trafegar apenas em HTTPS.
+- Usar `HttpOnly` para impedir acesso via JavaScript.
+- Definir `SameSite=Strict` para evitar vazamento de informações em ataques Cross-Site.
+
+
+Uma das formas mais seguras e eficientes de integrar Cookies com APIs é através do uso de tokens de autenticação, como JWT (JSON Web Token) e OAuth. Essa abordagem permite que o usuário permaneça autenticado e suas permissões sejam verificadas em cada requisição, sem a necessidade de revalidar a sessão constantemente.
+
 ### 🔐 **Como Funciona?**
 1. O usuário realiza login e a API valida as credenciais.
 2. A API gera um **token JWT** e o armazena em um Cookie do navegador, marcado como **Secure** e **HttpOnly**.
