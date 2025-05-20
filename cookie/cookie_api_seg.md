@@ -183,10 +183,14 @@ function logout() {
 ```javascript
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+
+// Serve arquivos estáticos (HTML, JS, CSS)
+app.use(express.static(__dirname));
 
 const secretKey = 'secretKey';
 
@@ -199,6 +203,18 @@ app.post('/login', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+```
+
+### npm install
+
+Se for necessário instalar as bibliotecas npm
+```bash
+npm install express
+```
+
+```bash
+npm install jsonwebtoken
 ```
 
 ### Testando a Aplicação
@@ -215,5 +231,11 @@ app.listen(PORT, () => {
 
 ---
 
-## Perguntas?
-Dúvidas e discussões sobre os conceitos abordados.
+## Estrutura esperada
+/sua-pasta/
+├── index.html
+├── dashboard.html
+├── client.js
+├── server.js
+
+
