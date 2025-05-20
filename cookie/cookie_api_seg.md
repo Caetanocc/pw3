@@ -137,6 +137,8 @@ Criar uma aplicação web que:
 - `/index.html` → Página principal com formulário de login.
 - `/dashboard.html` → Página protegida que só acessa se o Cookie estiver presente.
 - `/server.js` → Backend para gerar o JWT e validar o acesso.
+- `/client.js` → Frontend para fazer login e validar o acesso.
+
 
 ### Código da Atividade
 
