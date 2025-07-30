@@ -1,83 +1,71 @@
-Ano        [2025]
-Curso      [DS] 
-Disciplina [PW3]
-Professor  [Claudiomiro] 
-Aula       [01] 2025-07-31
+Ano: **2025**  
+Curso: **DS**  
+Disciplina: **PW3**  
+Professor: **Claudiomiro**  
+Aula: **01** — 31/07/2025
 
-### =============================aula 01=======================31/07
+---
 
-Ingressar no github, se ainda não tem conta  https://github.com/
+## Aula 01 — 31/07
 
+### Primeiros Passos
 
-- 1. Apresentar professor. https://www.linkedin.com/in/caetanoc/
-- 2. Apresentar e comentar bases tecnologicas.
-- 3. Apresentar critérios de avaliação.
-- 4. Aplicar avaliação diagnóstica.
+- Ingressar no GitHub (caso ainda não tenha conta): [https://github.com/](https://github.com/)
+- Apresentação do professor: [LinkedIn](https://www.linkedin.com/in/caetanoc/)
+- Apresentação e comentário das bases tecnológicas
+- Apresentação dos critérios de avaliação
+- Aplicação de avaliação diagnóstica
 
-Calendário do semestre.
-TCC - Grupos + projetos.
+**Calendário do semestre:**  
+TCC — Grupos e projetos
 
-### Bases tecnológicas 
+---
 
-Aplicações Web de página única (SPA)
-• Renderização de HTML;
-• Templates e estilização;
-• Componentes;
-• Estados;
-• Roteamento e navegação;
-• Eventos;
-• Formulários;
-• Validação.
+### Bases Tecnológicas
 
-Conceitos de CMS - Content Management System
-• Sessão de Usuário/Cookies/Hash de Autenticação.
+- Aplicações Web de Página Única (SPA):
+  - Renderização de HTML
+  - Templates e estilização
+  - Componentes
+  - Estados
+  - Roteamento e navegação
+  - Eventos
+  - Formulários
+  - Validação
 
-Acesso a dados via APIs REST
+- Conceitos de CMS (Content Management System):
+  - Sessão de usuário / Cookies / Hash de autenticação
 
-Autenticação e autorização
+- Acesso a dados via APIs REST
+- Autenticação e autorização
+- Testes automatizados (Jest)
 
-Testes automatizados (jest)
+---
 
+### Avaliação Diagnóstica
 
-### Avaliação diagnóstica.  
+- Link público: [https://forms.gle/fToCmEmyNACg6Usz9](https://forms.gle/fToCmEmyNACg6Usz9)
+- Link para edição: [Google Forms (edição)](https://docs.google.com/forms/d/1Ye28jGvZUX3f_5Ay426dB1m8kuoGJeANZi-WtGkO3ao/edit)
 
-- Link Publico:  https://forms.gle/fToCmEmyNACg6Usz9
-- edição: https://docs.google.com/forms/d/1Ye28jGvZUX3f_5Ay426dB1m8kuoGJeANZi-WtGkO3ao/edit
+---
 
+### Referências
 
-- Referencia.
+- Checar instalação do Node.js
+- Instalação do React
 
+#### Links para referência:
 
-checar instalação node.js 
-instalação REACT
+- [Cookies — Minha Conexão](https://www.minhaconexao.com.br/blog/internet/cookies)
+- [Gist: Cookies em JS](https://gist.github.com/cagartner/4c4dd7a6d5fa53e1f368)
+- [REST x SOAP](https://blog.tecnospeed.com.br/rest-x-soap/)
+- [Melhores frameworks de desenvolvimento web](https://www.lewagon.com/pt-BR/blog/melhores-frameworks-desenvolvimento-web)
+- [O que é REST e RESTful? (Stack Overflow)](https://pt.stackoverflow.com/questions/45783/o-que-%c3%a9-rest-e-restful)
+- [Microsoft Learn](https://docs.microsoft.com/pt-br/learn/)
 
+---
 
+#### Outros
 
-
-
-==> links para referencia.
-
-https://www.minhaconexao.com.br/blog/internet/cookies
-https://gist.github.com/cagartner/4c4dd7a6d5fa53e1f368
-https://blog.tecnospeed.com.br/rest-x-soap/
-https://www.lewagon.com/pt-BR/blog/melhores-frameworks-desenvolvimento-web
-https://pt.stackoverflow.com/questions/45783/o-que-%c3%a9-rest-e-restful
-
-
-https://docs.microsoft.com/pt-br/learn/
-
-
----------------------------------------------------------
-
-TIPOS DE API
-https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/
-
-COMO USAR REGEX EM JS
-https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/
-
-
-
-
-
-
-
+- [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+- [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
