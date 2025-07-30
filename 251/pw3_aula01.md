@@ -8,12 +8,17 @@ Aula: **01** — 31/07/2025
 
 ## Aula 01 — 31/07
 
-### Primeiros Passos
+### Objetivos da aula
 
 - Ingressar no GitHub (caso ainda não tenha conta): [https://github.com/](https://github.com/)
 - Apresentação do professor: [LinkedIn](https://www.linkedin.com/in/caetanoc/)
+- Apresentação dos alunos
 - Apresentação e comentário das bases tecnológicas
-- Apresentação dos critérios de avaliação
+- Apresentação dos critérios de avaliação:
+    - Exercícios de colaboração e interação
+    - Avaliação individual
+    - Participação na aula
+    - Desenvolvimento TCC
 - Aplicação de avaliação diagnóstica
 
 **Calendário do semestre:**  
