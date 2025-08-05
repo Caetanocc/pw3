@@ -1,0 +1,6 @@
+- Construir aplicações Web de modo a interligar pelo menos 3 disciplinas: 
+- Programação Web III Banco de dados III Internet e protocolos. 
+- Naturalmente esses 3 temas estarão interligados. 
+- A aplicação web vai acesar conteudo de bancos de dados online ou locais e para tanto vai precisar do conhecimento de redes e protocolos. 
+- Palestra sobre engenharia de dados na cloud. 
+- Desenvolvimento de TCCs integrando todas as disciplinas do curso.
