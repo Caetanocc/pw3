@@ -38,17 +38,11 @@ Criar Renderização condicional.
  const [error, setError] = useState('');
 ```
 
-4. criar a Renderização abaixo do button  
+4. criar a Renderização da mensagem de erro na tela.  
 
 ```
- 
-     {
-                    error && 
-                    <div className="error">
-                      {error}
-                    </div>
-                  }
-				  
+      {  error &&  <div className="error">  {error}  </div>  }
+			  
 ```
 
 4. ajustar o setError para limpar e mostrar msg
@@ -57,7 +51,7 @@ Criar Renderização condicional.
   
 5. criar function handleLogin(e) incluir onClick
 
-    function handleSignIn(e){
+    function handleLogin(e){
         e.preventDefault();
         setError('')
 
@@ -592,4 +586,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
