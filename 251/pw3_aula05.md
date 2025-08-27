@@ -11,7 +11,7 @@ Aula: **05** — 28/08/2025
 
 Firebase Hosting
 Component Header 
-Perfil de usuario
+Perfil de usuario com firestore 
 
 
 1. Implementar Firebase Hosting.
@@ -19,6 +19,8 @@ https://github.com/Caetanocc/pw3_252/blob/main/FirebaseHosting.md
 
 
 2. Criar Componentes Header.jsx e criar function logout()
+
+	2.1  Criar base Firestore no projeto.
 
 https://github.com/Caetanocc/pw3_252/blob/main/addHeaderMainLogin.md
 
@@ -1010,4 +1012,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
