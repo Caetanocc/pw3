@@ -203,8 +203,10 @@ function AuthContent() {
   
 ```
   
-3. Atividade:  Mostrar fullName quando não vier do Google 
+3. Atividade:  Mostrar fullName quando não vier do Google
 
+4. quizz   https://wayground.com/admin/quiz/66c4dbaeeac6fb148c52cef0?searchLocale=
+   
 Add telefone ao form de user Profile.
 
 após incluir o form de perfil do usuario, temos o projeto no github
@@ -213,12 +215,12 @@ averiguar se todos conseguem baixar o projeto base do github e colocar para roda
 https://github.com/Caetanocc/pw3_251/tree/main/appIni
 
 
-4. Criar pagina com lista de usuarios
+5. Criar pagina com lista de usuarios
 
 https://github.com/Caetanocc/pw3_252/blob/main/addChat.md
 
 
-5. Criar diferentes tipos de permissão.
+6. Criar diferentes tipos de permissão.
 
 
 
@@ -1231,4 +1233,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
