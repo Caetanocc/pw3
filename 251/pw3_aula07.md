@@ -365,33 +365,33 @@ export default ContactList;
 
 	4. inserir Header na lista de contatos.
 
-	```
+```
 			<Header pageTitle='👥 Lista'/>
-	```
+```
 
 
 	5. criar button flutuante com simbolo + na pagina de Contatos.
-	```
+```
 			<Link to="/add-cont">         <div className="floating-button">
 				<span>+</span>
 				</div>
 			</Link>
-	```
+```
 
 	6. alterar as rotas para abrir pagina add contato no **App.jsx**
 
-	```
+```
 				<Route index element={<ContactList />} />
 				<Route path="/user-prof" element={<UserProfileForm />} />
 				<Route path="/add-cont"  element={<AddContactPage />} />
 
-	```
+```
 
 
 	7. Criar página ChatPage.jsx na pasta **views**
 
 
-	```
+```
 	import { useState, useEffect } from 'react';
 	import { useParams } from 'react-router-dom';
 	import { db, auth } from '../firebase/config';
@@ -494,11 +494,11 @@ export default ContactList;
 	};
 
 	export default Chat;
-	```
+```
 
 	9. criar um arquivo **Chat.css** na pasta **views**
 		
-	```
+```
 	.chat-container {
 		display: flex;
 		flex-direction: column;
@@ -557,29 +557,29 @@ export default ContactList;
 		cursor: pointer;
 	  }
 	  
-	```
+```
 
 	10. Na página **ContactListPage.jsx** , Incluir acessos para abrir chat: 
 
 	a. incluir a function apos handleEdit
-	```
+```
 	  const handleOpenChat = (id) => {
 		navigate(`/chat/${id}`);
 	  };
-	```
+```
 
 	 b. incluir tratamento de evento na linha do contato.  dentro da div "<div key={user.id}  ..."
 	 
-	```
+```
 	onClick={() => handleOpenChat(user.id)}
-	```
+```
 
 	11. Criar nova rota no **App.jsx**  para permitir carregar a pagina Chat
 
-	```
+```
 				<Route path="/chat/:id"  element={<Chat />} />
 
-	```
+```
 
 
 mandar aos alunos 
@@ -2065,4 +2065,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
