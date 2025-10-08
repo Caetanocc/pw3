@@ -4,7 +4,7 @@ Disciplina: **PW3**
 Professor: **Claudiomiro**  
 Aula: **11** — 09/10/2025
 ---
-## Aula 11 — 02/10
+## Aula 11 — 09/10
 
 ### Objetivos da aula
 
@@ -2268,4 +2268,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
