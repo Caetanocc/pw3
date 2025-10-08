@@ -2,7 +2,19 @@ Ano: **2025**
 Curso: **DS**  
 Disciplina: **PW3**  
 Professor: **Claudiomiro**  
-Aula: **11** — 09/10/2025
+Aula: **12** — 16/10/2025
+---
+## Aula 12 — 16/10
+
+### Objetivos da aula
+
+
+
+
+
+
+
+
 ---
 ## Aula 11 — 09/10
 
