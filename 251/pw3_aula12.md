@@ -90,6 +90,82 @@ curl -X DELETE https://etec24-3dc8c-default-rtdb.firebaseio.com//game/-Nt6wFA7EL
 curl -X DELETE https://etec24-3dc8c-default-rtdb.firebaseio.com//game.json
 
 
+10. Acesso a dados via APIs REST
+
+**VIACEP. Exemplos.**  implementar js react 
+
+https://viacep.com.br/exemplo/javascript/
+
+```
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Loader2 } from "lucide-react";
+import axios from "axios";
+
+const BuscaEnderecoViaCEP = () => {
+  const [cep, setCep] = useState("");
+  const [endereco, setEndereco] = useState(null);
+  const [erro, setErro] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleBuscarCep = async () => {
+    if (cep.length !== 8) {
+      setErro("CEP inválido! Deve conter 8 dígitos.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      if (response.data.erro) {
+        setErro("CEP não encontrado!");
+        setEndereco(null);
+      } else {
+        setEndereco(response.data);
+        setErro("");
+      }
+    } catch (error) {
+      setErro("Erro ao buscar o CEP.");
+      setEndereco(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center p-4 space-y-4">
+      <Input
+        placeholder="Digite o CEP (somente números)"
+        value={cep}
+        onChange={(e) => setCep(e.target.value)}
+        maxLength={8}
+        className="w-60"
+      />
+      <Button onClick={handleBuscarCep} className="w-60" disabled={loading}>
+        {loading ? <Loader2 className="animate-spin" /> : "Buscar Endereço"}
+      </Button>
+
+      {erro && <p className="text-red-500">{erro}</p>}
+
+      {endereco && (
+        <Card className="w-80 mt-4">
+          <CardContent>
+            <p><strong>Logradouro:</strong> {endereco.logradouro}</p>
+            <p><strong>Bairro:</strong> {endereco.bairro}</p>
+            <p><strong>Cidade:</strong> {endereco.localidade}</p>
+            <p><strong>Estado:</strong> {endereco.uf}</p>
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+};
+
+export default BuscaEnderecoViaCEP;
+
+```
+
 
 
 ### 4. Mongodb
