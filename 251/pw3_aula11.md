@@ -15,8 +15,11 @@ comentar sobre as notas, se está tudo ok.
 ### 2. VERBOS HTTP:  Introdução ao REST 
 
 GET 
+
 POST
+
 PUT 
+
 DELETE 
 
 https://github.com/Caetanocc/pw3_252/blob/main/Criar%20REALTIME%20DATABASE%20FIREBASE.pdf
@@ -2341,4 +2344,5 @@ TCC — Grupos e projetos
 #### Outros
 
 - [Tipos de API](https://programadoresdepre.com.br/quais-sao-os-diferentes-tipos-de-api/)
+
 - [Como usar regex em JS](https://programadoresdepre.com.br/como-usar-expressoes-regulares-em-javascript/)
