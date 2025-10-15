@@ -8,12 +8,291 @@ Aula: **12** — 16/10/2025
 
 ### Objetivos da aula
 
+*App React TCC* 
+
+ - Mostrar entrega https://pre-tcc-4cf63.web.app/  
+
+ - material nosql   https://github.com/Caetanocc/bd3
 
 
+ - Criar conta banco atlas: Atlas https://www.mongodb.com/products/platform
+
+ -  comparativo relacional vs nosql. mongodb
+
+### Code Summary: INSERT in MongoDB
+Insert a Single Record
+To insert a single record into a SQL database, you would use the following command:
+
+```
+INSERT INTO users (first_name, last_name, phone, age) 
+VALUES ('Nancy', 'Smith', "5234560987", 29);
+```
 
 
+To insert the same data into a MongoDB database, use the following:
+
+```
+db.users.insertOne(
+    {
+        first_name: "Nancy",
+        last_name: "Smith",
+        phone: "523-456-0987",
+        age: 25
+    }
+)
+```
 
 
+Insert Multiple Records
+To insert four records into a SQL database, you would use the following command:
+
+```
+
+INSERT INTO users (first_name, last_name, phone, age)
+VALUES
+  ('Douglas', 'Lowel', "5234768907", 23),
+  ('Kai', 'Tran', "9198761234", 43),
+  ('Linzey', 'Rivers', "7659023456", 54),
+  ('Mira', 'Chan', "7650981234", 88);
+```
+
+
+To insert the same four documents into a MongoDB database, use the following:
+
+```
+db.users.insertMany([
+    {
+        first_name: "Douglas",
+        last_name: "Lowel",
+        phone: "523-476-8907",
+        age: 23
+    },
+    {
+        first_name: "Kai",
+        last_name: "Tran",
+        phone: "919-876-1234",
+        age: 43,
+    },
+    {
+        first_name: "Linzey",
+        last_name: "Rivers",
+        phone: "765-902-3456",
+        age: 54,
+    },
+    {
+        first_name: "Mira",
+        last_name: "Chan",
+        phone: "765-098-1234",
+        age: 88,
+    }
+])
+```
+
+
+### Code Summary: SQL SELECT in MongoDB
+Query for One Record
+In SQL, we use the SELECT statement to query for specific records in the database:
+
+SELECT chooses which fields to include in the output.
+FROM chooses which table to select from.
+LIMIT chooses how many records to return.
+In the following example, we’re selecting the city and state fields from one entry in the zips table:
+
+```
+SELECT city, state FROM zips LIMIT 1;
+```
+
+To perform the same action in MongoDB, we use the findOne() method to return a single document from the zips collection.
+
+```
+db.zips.findOne({})
+```
+
+
+Query for Multiple Records
+To query for more than one record in SQL, we use the SELECT statement along with a WHERE clause. Here, we’re selecting the city from the zips table where the state is equal to AZ, and the population is less than 500:
+
+SELECT city FROM zips WHERE state = 'AZ' AND pop < 500;
+Now, let’s do the same thing in MongoDB by providing a filter document to the find() method:
+
+```
+db.zips.find({state: 'AZ', pop: {$lt: 500}})
+```
+
+
+Use Projection to Modify Output
+Let’s build on the previous query by returning the city field of every document. To do this in MongoDB, we would use a projection document like this:
+
+```
+db.zips.find({state: 'AZ', pop: {$lt: 500}}, {_id: 0, city: 1})
+```
+
+
+Explain a Query
+If we want to better understand a query in SQL, we place the EXPLAIN keyword in front of our query. For example:
+
+```
+EXPLAIN SELECT city, state, pop 
+            FROM zips 
+WHERE state = 'NY' AND pop BETWEEN 1000 AND 5000 
+ORDER BY pop DESC 
+LIMIT 10;
+```
+
+MongoDB has its own explain method. We add the explain() method just before the find() command:
+
+```
+db.zips.explain().find(
+    { state: "NY", pop: { $gte: 1000, $lte: 5000 }}, 
+    {_id: 0, state: 1, city: 1, pop: 1}
+    ).sort({pop: -1})
+    .limit(10)
+```
+
+### Code Summary: BETWEEN, ORDER BY, LIMIT in MongoDB
+In SQL, we can specify an order for our results by using ORDER BY. For example, in the following SQL statement, we’re selecting every record’s city, state, and population from the zips table, where the state is New York, and the population is between 1000 and 5000. We also want to order the results by population in descending order and limit it to the first 10 results. To do this, we use ORDER BY along with BETWEEN and LIMIT.
+
+SELECT city, state, pop 
+FROM zips 
+WHERE state = 'NY' AND pop BETWEEN 1000 AND 5000 
+ORDER BY pop DESC 
+LIMIT 10;
+
+
+The MongoDB equivalent of SELECT is the find() method. We can create the equivalent command by passing in a filter to select documents where the state is New York, and the population is between 1000 and 5000. We can also sort the results based on population by appending the sort() method to our query. Then, we use the limit() method to determine how many results to return:
+
+```
+db.zips.find(
+    { state: "NY", pop: { $gte: 1000, $lte: 5000 }}
+    ).sort({pop: -1})
+    .limit(10)
+```
+
+
+Now, let’s pass in a projection document in MongoDB that excludes the _id and includes city, state, and population fields:
+
+```
+db.zips.find(
+    { state: "NY", pop: { $gte: 1000, $lte: 5000 }}, 
+    {_id: 0, state: 1, city: 1, pop: 1}
+    ).sort({pop: -1})
+    .limit(10)
+```
+
+
+### Code Summary: UPDATE in MongoDB
+Insert a Single Record
+In SQL, we use UPDATE to update a record. In the following example, we’re updating a record in the sales table, where the id is equal to 1234567, to set the store location to London.
+
+```
+UPDATE sales SET storeLocation = 'London' WHERE id = '1234567';
+```
+
+We can do the same thing in MongoDB by using the updateOne() method:
+
+```
+db.sales.updateOne(
+  { _id: ObjectId("5bd761dcae323e45a93ccff1") },
+  { $set: { storeLocation: "London" } }
+);
+```
+
+If you want to update a document that may not already exist, you can optionally include it by setting the upsert option to true:
+
+```
+db.sales.updateOne(
+  { _id: ObjectId("5bd761dcae323e45a93ccab2") },
+  { $set: { storeLocation: "London" } },
+  { upsert: true }
+);
+```
+
+
+Update Multiple Records
+In SQL, updating multiple records is similar to our first example where we updated a single record. Here, we're updating all records for purchases made online to indicate that they also used a coupon:
+
+```
+UPDATE sales SET couponUsed = true WHERE purchaseMethod = 'Online';
+```
+
+To perform this same action in MongoDB, we use the updateMany() method with a filter and the $set method:
+
+```
+db.sales.updateMany(
+ { purchaseMethod: "Online" },
+  { $set:  { couponUsed: true } }
+);
+```
+
+
+### Code Summary: DELETE in MongoDB
+Delete a Single Record
+To delete a record in SQL, we use DELETE. In the following SQL statement, we’re deleting a record from the sales table, where the id is equal to 1234567:
+
+```
+DELETE FROM sales WHERE id = '1234567';
+```
+To do the same thing in MongoDB, we use the deleteOne() method:
+
+```
+db.sales.deleteOne({_id: ObjectId("5bd761dcae323e45a93ccff1")})
+```
+
+
+Delete Multiple Records
+To delete multiple records in SQL, we still use a DELETE statement along with a WHERE clause. Here, we’re deleting every store located in Denver or New York:
+
+```
+DELETE FROM sales WHERE storeLocation IN ('Denver', 'New York');
+```
+
+To delete multiple documents in MongoDB, we use the deleteMany() method along with the $in operator:
+
+```
+db.sales.deleteMany({ storeLocation: {$in: [ 'Denver', 'New York' ]} });
+```
+
+### Code Summary: SQL JOINs In MongoDB 
+In SQL, we use INNER JOIN in our statement to join two tables:
+
+```
+SELECT t.*, a.account_id, a.account_holder
+              FROM transfers t
+INNER JOIN account_holder a ON t.transfer_id = a.transfers_complete
+```
+
+This SQL JOIN query does the following:
+
+Joins the records of the transfers table with the records of the accounts table.
+Uses the transfers_complete field from the accounts table and the transfer_id field from the transfers table.
+Projects the account_holder and account_id fields from the accounts table into the transfers table.
+To do the same in MongoDB, we use the $lookup operator from the aggregation framework. Inside the $lookup stage, we define the following:
+
+accounts is the collection to join.
+transfer_id as localField is the field to use in the equality match from the input documents.
+transfers_complete as foreignField is the field to use in the equality match from the transfers collection.
+account_id and account_holder are the projected fields in the resulting documents while suppressing the _id field.
+account_holder is the name of the new array field to add to the input documents.
+Here’s the code:
+
+```
+db.transfers.aggregate( [
+    {
+      $lookup:
+        {
+          from: "accounts",
+          localField: "transfer_id",
+          foreignField: "transfers_complete",
+          pipeline: [
+ 
+             { $project: { _id: 0, account_id: 1, account_holder: 1 } }
+          ],
+          as: "account_holder"
+      }
+  }] )
+```
+
+  
 
 ---
 ## Aula 11 — 09/10
