@@ -15,9 +15,9 @@ Aula: **14** — 30/10/2025
 
 - Review Bases tecnológicas.
 
-Aula de cookies. testes e experimentações com cookies.
-Mongodb 
-Tcc , temos 5 grupos. avaliar necessidades.
+- Aula de cookies. testes e experimentações com cookies.
+- review sobre conections Mongodb 
+- Tcc , temos 5 grupos. avaliar necessidades.
 
 
 
@@ -445,5 +445,6 @@ Aprendemos a:
 * MongoDB Atlas permite restringir IPs autorizados para conexão.
 
 ---
+
 
 
