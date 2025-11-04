@@ -15,10 +15,9 @@ Aula: **14** — 30/10/2025
 
 - Review Bases tecnológicas.
 
-Databricks ?
+Aula de cookies. testes e experimentações com cookies.
 Mongodb 
-Data science
-
+Tcc , temos 5 grupos. avaliar necessidades.
 
 
 
@@ -446,4 +445,5 @@ Aprendemos a:
 * MongoDB Atlas permite restringir IPs autorizados para conexão.
 
 ---
+
 
