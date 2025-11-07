@@ -19,9 +19,7 @@ https://wayground.com/join?gc=46937322
 
 # Testes End-to-End (E2E) com Cypress
 
-
-
-
+https://github.com/Caetanocc/pw3/blob/main/251/testes-e2e-cypress.md
 
 
 ---
@@ -631,4 +629,5 @@ Aprendemos a:
 * MongoDB Atlas permite restringir IPs autorizados para conexão.
 
 ---
+
 
